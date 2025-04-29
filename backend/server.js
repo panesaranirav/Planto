@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 // 🔹 Serve static images
 app.use("/uploads", express.static("uploads"));
 
@@ -19,6 +20,11 @@ connectDB();
 // 🔹 API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+
+// 🔹 Default Home Route
+app.get("/", (req, res) => {
+    res.send("🌱 Planto Backend API is Live");
+  });
 
 // 🔹 Start Server
 const PORT = process.env.PORT || 5000;
