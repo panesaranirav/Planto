@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Cat Food Premium",
+      "image": "/src/assets/topsellfirst.png",
+      "price": 12.99,
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "Cat Toy Mouse",
+      "image": "/src/assets/topsellsecond.png",
+      "price": 5.49,
+      "rating": 5,
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "name": "Cat Bed Soft",
+      "image": "/src/assets/topsellfour.png",
+      "price": 29.99,
+      "rating": 3,
+      "quantity": 1
+    }
+  ]
+  

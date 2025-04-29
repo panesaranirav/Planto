@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider-container {
+    width: 80%; 
+    height: 65%; 
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.048); 
+    position: relative;
+    top: 80px;
+    border-radius:20px; 
+    border: 1px solid rgba(255, 255, 255, 0.048);
+    backdrop-filter: blur(6px);
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.slide img {
+    width: 380px;
+    height:380px; 
+    object-fit: cover; 
+    border-radius: 8px;
+    margin-top: -3%;
+}
+
+
+.slick-dots li button:before {
+    color: rgba(255, 255, 255, 0.158);
+    font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: rgb(103, 103, 104);
+}
+
+.slick-prev, .slick-next {
+    z-index: 0;
+    display: none;
+}
+.slick-prev:before, .slick-next:before {
+    color: rgba(233, 228, 228, 0.082);
+}
+.main{
+    background-color: rgba(26,34,23,255);
+    height: 580px;
+    width: 100%;
+}
+.slider-img-text{
+    display: flex;
+}
+.slider-img img{
+    position:relative;
+    top: -20px;
+}
+.slider-text{
+   margin-top: 5%;
+}
+.slider-text h1{
+    font-size: 28px;
+    width: 70%;
+}
+.slider-text p{
+    font-size: 15px;
+    width: 88%;
+    margin-top: 2%;
+}
+.slider-text button{
+    height: 40px;
+    width: 180px;
+    margin-top: 5%;
+    background-color: rgba(240, 248, 255, 0.041);
+    border: 1px solid rgba(255, 255, 255, 0.041);
+    border-radius: 10px;
+    font-size: 18px;
+}
+.main h2{
+    text-align: center;
+    font-size: 33px;
+}
+@media (max-width: 930px) {
+    .slider-text{
+        width: auto;
+        margin-top: 20%;
+    }
+    .slider-text h1{
+        font-size:20px ;
+    }
+    .slider-text p{
+        font-size:15px ;
+    }
+    .slider-img{
+        width: 230px;
+        height: auto;
+        position: relative;
+        right: 40px;
+    }
+    .slider-img img{
+        width: 260px;
+    }
+    .remove p{
+        display: none;
+    }
+}
+@media (max-width: 650px) {
+    .slider-text{
+        width: auto;
+        display: none;
+    }
+    .slider-img{
+       margin-left: 15%;
+    }
+    
+
+
+}

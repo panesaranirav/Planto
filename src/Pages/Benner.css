@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+.benner-sec{
+    display: flex;
+}
+.left-sec-benner{
+    width: 50%;
+    height: auto;
+    margin-left:5%;
+}
+.left-sec-benner-text{
+    padding:10% 2%;
+}
+.left-sec-benner-text h1{
+    font-size: 60px;
+    line-height: 1.5;
+}
+.left-sec-benner-text p{
+    margin-bottom: 5%;
+    letter-spacing: 1.2px;
+    width: 80%;
+}
+.left-sec-benner-text button{
+    height: 40px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.274);
+    font-size: 18px;
+    border-radius: 10px;
+}
+.people-card{
+    height: 200px;
+    width: 450px;
+    padding: 5%;
+    margin: 10% 5%;
+    border: 1px solid rgba(255, 255, 255, 0.233);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.062);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+}
+.card{
+    display: flex;
+    margin-bottom: 5%;
+}
+.people-img{
+    align-items: center;
+}
+.people-name{
+    line-height: 2.3;
+    padding-left: 2%;
+}
+
+.right-sec-benner{
+    width: 50%;
+    height: auto;
+}
+.right-sec-card{
+ height: 500px;
+ width: 430px;
+ border: 1px solid white;
+ margin: 20% 10%;
+ background-color: rgba(240, 248, 255, 0.048);
+ backdrop-filter: blur(6px);
+ border-radius: 20px;
+ 
+}
+.right-sec-card img{
+    position:relative;
+    bottom:30%;
+    right:25px;
+}
+.right-sec-text button{
+    font-size: 20px;
+    font-weight: 200;
+    height: 40px;
+    width: 170px;
+    background-color: rgba(255, 255, 255, 0.048);
+    border: 1px solid rgba(255, 255, 255, 0.068);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.right-sec-text{
+    text-align: center;
+    position: relative;
+    bottom: 30%;
+    line-height:2;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .benner-sec{
+        display: block;
+        width: auto;
+    }
+    .left-sec-benner{
+        display: flex;
+        width: auto;
+    }
+    .people-card{
+        display: none;
+    }
+    .right-sec-card{
+        position: relative;
+        left: 70%;
+        bottom:100px;
+    }
+}
+@media (max-width: 350px) {
+    .right-sec-benner {
+        width: 26%;
+        height: auto;
+    }
+}

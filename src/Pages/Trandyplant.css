@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.trand-heading{
+    text-align: center;
+}
+.trand-heading h1{
+    font-size: 40px;
+}
+.trand-card{
+    display: flex;
+    height: 300px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.062);
+    backdrop-filter: blur(6px);
+    margin: 10%;
+    border-radius:40px;
+    position:absolute;
+}
+.trand-img{
+   position: relative;
+   bottom:40%;
+   padding-left:2%;
+}
+.trand-img img{
+    width: 350px;
+}
+.trand-text{
+    width: 55%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.trand-text h2{
+    font-size: 35px;
+    line-height: 2;
+    font-weight: 600;
+}
+.trand-text p{
+    font-size: 15px;
+}
+.trand-text h3{
+    line-height: 2;
+    font-size: 20px;
+    font-weight: 400;
+}
+.trand-text button{
+    height: 35px;
+    width: 160px;
+    background-color: rgba(250, 235, 215, 0.082);
+    border: 1px solid rgba(255, 255, 255, 0.082);
+    backdrop-filter: blur(6px);
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+
+.trand-img1{
+    position: relative;
+    bottom:40%;
+    order: 2;
+ }
+ .trand-img1 img{
+     width: 440px;
+ }
+ .trand-text1{
+     width: 55%;
+     margin-top:5%;
+     margin-left: 7%;
+     order: 1;
+ }
+ .trand-text1 h2{
+     font-size: 35px;
+     line-height: 2;
+     font-weight: 600;
+ }
+ .trand-text1 p{
+     font-size: 15px;
+ }
+ .trand-text1 h3{
+     line-height: 2;
+     font-size: 20px;
+     font-weight: 400;
+ }
+ .trand-text1 button{
+     height: 35px;
+     width: 160px;
+     background-color: rgba(250, 235, 215, 0.082);
+     border: 1px solid rgba(255, 255, 255, 0.082);
+     backdrop-filter: blur(6px);
+     font-size: 18px;
+     border-radius: 10px;
+ }
+ .main-trand1{
+    margin-top: 30%;
+ }
+
+ @media (max-width: 1024px) {
+    .main-trand{
+        margin-top: -100px;
+    }
+    .main-trand1{
+        position: relative;
+        top: 20%;
+        margin: 0;
+    }
+    .trand-img{
+      width: 30%;
+    }
+    .trand-img img{
+    width: 200px;
+    margin-top: 60%;
+    }
+    .trand-text{
+        width: 300px;
+    }
+    .trand-text h2{
+        font-size: 30px;
+    }
+    .trand-text p{
+        font-size: 12px;
+    }
+    .trand-text h3{
+        font-size: 15px;
+    }
+    .trand-img1 img{
+        width: 300px;
+        margin-top: 30%;
+        
+        }
+    .trand-text1{
+        width: 500px;
+    }
+    .trand-text1 h2{
+        font-size: 30px;
+    }
+    .trand-text1 p{
+        font-size: 12px;
+    }
+    .trand-text1 h3{
+        font-size: 15px;
+    }
+ }
+@media (max-width: 700px) {
+.trand-img{
+  width: 30%;
+}
+.trand-card{
+    height: 250px;
+}
+.trand-img img{
+width: 150px;
+position: absolute;
+top: 23%;
+}
+.trand-text{
+    width: 200px;
+    margin-left: auto;
+}
+.trand-text h2{
+    font-size: 20px;
+}
+.trand-text p{
+    font-size: 10px;
+
+}
+.trand-text h3{
+    font-size: 15px;
+}
+.trand-img1 img{
+    width: 200px;
+    position: absolute;
+    top: 35%;
+    right: 2%;    
+}
+.trand-text1{
+    width: 500px;
+}
+.trand-text1 h2{
+    font-size: 18px;
+}
+.trand-text1 p{
+    font-size: 10px;
+    width: 50%;
+}
+.trand-text1 h3{
+    font-size: 15px;
+
+ }
+}
+@media (max-width: 450px) {
+
+.trand-text1 p {
+ display: none;    
+}
+.trand-text1 h2 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.trand-img1 img {
+    position: absolute;
+    top: 50%;
+    right: 45%;
+}
+.trand-text1 button {
+position: absolute;
+top: 80%;
+width: 85%;
+}
+.trand-text1 h3 {
+    position: absolute;
+    top: 70%;
+    left: 30px;
+}
+.trand-text p {
+   display: none;
+}
+.trand-text button {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    width: 85%;
+}
+.trand-text h3 {
+    position: absolute;
+    top: 70%;
+    left: 30px;
+}
+.trand-img img {
+    position: absolute;
+    top: 50%;
+    left:160%;
+    padding: 0px;
+    margin: 0px;
+}
+.trand-text h2 {
+    font-size: 18px;
+    margin-right: 20%;
+    width: 100%;
+}
+.trand-text {
+    width: 370px;
+}
+
+}

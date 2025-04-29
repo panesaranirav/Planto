@@ -1,0 +1,15 @@
+.order-loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 20px;
+  }
+  
+  .order-success {
+    text-align: center;
+    font-size: 1.3rem;
+    color: green;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
