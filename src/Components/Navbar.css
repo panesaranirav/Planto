@@ -54,11 +54,34 @@
 
   }
 .cart{
-    color: rgb(255, 255, 255); 
-    font-size: 20px;
-    cursor: pointer; 
-
+  color: rgb(255, 255, 255); 
+  font-size: 20px;
+  cursor: pointer; 
+  position: relative;
+  
 }
+
+.cart-count {
+  position: absolute;
+  top: 17px;
+  right: -10px;
+  background-color: rgba(20, 83, 28, 0.644);
+  border: 2px solid rgba(255, 255, 255, 0.151);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: none; 
+  pointer-events: none; 
+}
+
+
 .user{
     color: white;
 }

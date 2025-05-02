@@ -5,12 +5,17 @@ import "./Navbar.css";
 import assets from "../assets/assets";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { useCart } from "../Context/CartContext";
+
 
 const Navbar = () => {
 
   const [profileImage, setProfileImage] = useState('');
   const userEmail = localStorage.getItem("userEmail");
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartItems } = useCart();
+
+
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
@@ -22,7 +27,7 @@ const Navbar = () => {
         if (response.data.user.profileImage) {
           setProfileImage(response.data.user.profileImage);
           localStorage.setItem("profileImage", response.data.user.profileImage);
-          console.log(profileImage)
+
         }
       } catch (error) {
         console.error("Error fetching user profile", error);
@@ -31,6 +36,11 @@ const Navbar = () => {
 
     fetchUserProfile();
   }, []);
+  // useEffect(() => {
+  //   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  //   setCartCount(cartItems.length);
+  // }, []);
+  
   return (
     <nav>
       <div className="nav-sec">
@@ -55,7 +65,8 @@ const Navbar = () => {
           </div>
           <div className="cart">
           <Link to="/cart">
-          <FontAwesomeIcon icon={faShoppingCart} />
+          <FontAwesomeIcon icon={faShoppingCart} className="cart-icon"  />
+          <span className="cart-count">{cartItems.length > 0 && <span>{cartItems.length}</span>}</span>
         </Link>
           </div>
           <div className="user">

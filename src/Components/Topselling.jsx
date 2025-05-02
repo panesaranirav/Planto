@@ -23,7 +23,7 @@ const Topselling = () => {
     });
   }
    useEffect(() => {
-      fetch("http://localhost:3003/Populer")
+      fetch("http://localhost:3001/Populer")
         .then((response) => response.json())
         .then((data) => {
           setPlants(data);
