@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "api": "node merge.js && json-server --watch db.json --port 3005",
+    "start": "node merge.js && json-server --watch db.json --port 10000",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
