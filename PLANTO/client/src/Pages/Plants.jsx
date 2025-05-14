@@ -14,7 +14,7 @@ const Plants = () => {
   const [loading, setLoading] = useState(true);
   const { addToCart } = useCart();  
   useEffect(() => {
-    fetch("http://localhost:3001/plants")
+    fetch("https://planto-json-api.onrender.com/plants")
       .then((response) => response.json())
       .then((data) => {
         setPlants(data);

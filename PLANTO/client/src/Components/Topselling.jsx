@@ -23,7 +23,7 @@ const Topselling = () => {
     });
   }
    useEffect(() => {
-      fetch("http://localhost:3001/Populer")
+      fetch("https://planto-json-api.onrender.com/Populer")
         .then((response) => response.json())
         .then((data) => {
           setPlants(data);
