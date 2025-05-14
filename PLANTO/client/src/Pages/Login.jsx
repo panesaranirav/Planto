@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", formData);
+      const response = await axios.post("https://planto-4.onrender.com/api/auth/login", formData);
 
       if (response.data.success) {
         toast.success("Login Successful!");

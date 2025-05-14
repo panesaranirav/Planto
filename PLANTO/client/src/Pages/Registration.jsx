@@ -41,7 +41,7 @@ const Registration = () => {
       formData.append("password", userData.password);
       formData.append("profileImage", userData.profileImage); 
 
-      const response = await axios.post("http://localhost:5000/api/auth/register", formData, {
+      const response = await axios.post("https://planto-4.onrender.com/api/auth/register", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
