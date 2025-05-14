@@ -9,7 +9,7 @@ import morgan from "morgan";
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors("planto-panesara-niravs-projects.vercel.app"));
 app.use(express.json());
 app.use(morgan('dev'))
 
