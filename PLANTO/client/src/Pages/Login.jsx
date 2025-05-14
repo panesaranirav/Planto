@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import process from 'process'
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -20,7 +20,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://planto-4.onrender.com/api/auth/login", formData);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/login`, formData);
+
 
       if (response.data.success) {
         toast.success("Login Successful!");

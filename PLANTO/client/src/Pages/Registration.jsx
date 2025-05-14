@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Registration.css";
-
+import process from 'process'
 const Registration = () => {
   const navigate = useNavigate();
   
@@ -41,7 +41,7 @@ const Registration = () => {
       formData.append("password", userData.password);
       formData.append("profileImage", userData.profileImage); 
 
-      const response = await axios.post("https://planto-4.onrender.com/api/auth/register", formData, {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/register`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
