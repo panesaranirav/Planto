@@ -13,8 +13,10 @@ const Plants = () => {
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(true);
   const { addToCart } = useCart();  
+
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
-    fetch("https://planto-json-api.onrender.com/plants")
+    fetch(`${backendUrl}/plants`)
       .then((response) => response.json())
       .then((data) => {
         setPlants(data);

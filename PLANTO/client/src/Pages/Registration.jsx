@@ -41,7 +41,7 @@ const Registration = () => {
       formData.append("password", userData.password);
       formData.append("profileImage", userData.profileImage); 
 
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/register`, formData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

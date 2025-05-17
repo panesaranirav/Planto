@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Plants from "../Pages/Plants";
 import { useState,useEffect } from "react";
-import process from 'process'
 
 const Topselling = () => {
   const { addToCart } = useCart();  
@@ -23,6 +22,7 @@ const Topselling = () => {
       autoClose: 2000,
     });
   }
+
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
    useEffect(() => {
     fetch(`${backendUrl}/Populer`)
@@ -42,8 +42,8 @@ const Topselling = () => {
       });
   }, []);
     
-   if (loading) {
-    return <div>Loading plants...</div>;
+  if(loading){
+    return <p>wait..........</p>
   }
   return (
     <div className="topselling-sec">
