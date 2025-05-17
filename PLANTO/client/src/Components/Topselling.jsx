@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Plants from "../Pages/Plants";
 import { useState,useEffect } from "react";
+import process from 'process'
 
 const Topselling = () => {
   const { addToCart } = useCart();  
@@ -22,19 +23,28 @@ const Topselling = () => {
       autoClose: 2000,
     });
   }
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
    useEffect(() => {
-      fetch("https://planto-json-api.onrender.com/Populer")
-        .then((response) => response.json())
-        .then((data) => {
-          setPlants(data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error Fatching Plants Data ", error);
-          setLoading(false);
-        });
-    }, []);
+    fetch(`${backendUrl}/Populer`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPlants(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error Fetching Plants Data:", error);
+        setLoading(false);
+      });
+  }, []);
     
+   if (loading) {
+    return <div>Loading plants...</div>;
+  }
   return (
     <div className="topselling-sec">
         <div className="topselling-sec">
