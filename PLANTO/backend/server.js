@@ -9,7 +9,11 @@ import morgan from "morgan";
 
 dotenv.config();
 const app = express();
-app.use(cors("planto-panesara-niravs-projects.vercel.app"));
+app.use(cors({
+  origin: "https://planto-panesara-niravs-projects.vercel.app",
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(morgan('dev'))
 
@@ -24,6 +28,7 @@ connectDB();
 // 🔹 API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api", userRoutes);
 
 // 🔹 Default Home Route
 app.get("/", (req, res) => {
