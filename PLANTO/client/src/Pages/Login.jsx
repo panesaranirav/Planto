@@ -14,14 +14,11 @@ const Login = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
- 
+   
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${backendUrl}/api/auth/login`, formData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, formData);
 
       if (response.data.success) {
         toast.success("Login Successful!");
