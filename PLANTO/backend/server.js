@@ -9,8 +9,21 @@ import morgan from "morgan";
 
 dotenv.config();
 const app = express();
-app.use(cors({ origin: 'https://planto-omega.vercel.app', // allow your frontend origin
-  credentials: true, })); 
+const allowedOrigins = [
+  'https://planto-git-main-panesara-niravs-projects.vercel.app',
+  'https://planto-omega.vercel.app' // include if needed
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+})); 
 
 
 
