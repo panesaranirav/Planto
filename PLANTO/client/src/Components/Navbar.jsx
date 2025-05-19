@@ -22,7 +22,7 @@ const Navbar = () => {
       try {
         if (!userEmail) return;
         const response = await axios.get(`https://planto-4.onrender.com/user-profile`, {
-          params: { email: encodeURIComponent(userEmail) },
+          params: { email:userEmail},
         });
 
         if (response.data.user.profileImage) {
@@ -78,7 +78,7 @@ const Navbar = () => {
           <div className="user">
             <Link to="/profile">
               <img
-                src={profileImage || "/src/assets/people.png"}
+                src={profileImage || "../assets/people.png"}
                 alt="Profile"
                 className="profile-img"
               />
