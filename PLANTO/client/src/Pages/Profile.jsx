@@ -77,7 +77,11 @@ const Profile = () => {
                   onChange={handleChange}
                 />
               ) : (
-                <p>{profileData[field]} || 'N/A'</p>
+                <>  
+                <p>{profileData[field]}</p>
+                <p>{profileData.phoneNumber || 'N/A'}</p>
+                </>
+
                 
               )}
             </div>
