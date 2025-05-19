@@ -9,21 +9,39 @@
     background: radial-gradient(circle, rgba(1,135,17,1) 0%, rgba(21,56,1,1) 40%, rgba(3,50,8,1) 60%);
     justify-content: center;
     align-items: center;
-    height: 130vh;
+    height: 100vh;
     width: 100%;
 }
 
 .container {
     background: rgba(255, 255, 255, 0.041);
-    
+    margin: 0px 5%;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 500px;
-    max-height: 600px;
+    max-height: 700px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.container-login{
+    background: rgba(255, 255, 255, 0.041);
+    margin: 0px 5%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    max-height: 400px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.container-login h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: rgb(209, 208, 208);
+    
 }
 
 .container h1 {
