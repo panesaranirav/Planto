@@ -78,7 +78,7 @@ const Navbar = () => {
           <div className="user">
             <Link to="/profile">
               <img
-                src={profileImage || "../assets/people.png"}
+                src={profileImage || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
                 alt="Profile"
                 className="profile-img"
               />
