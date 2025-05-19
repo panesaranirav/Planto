@@ -1,12 +1,14 @@
 import express from "express";
 import User from "../models/User.js";
 import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 const router = express.Router();
 
 // Use import.meta.url to get the current directory path
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
 
 // Serve static files from the "uploads" folder
 const uploadPath = path.join(__dirname, "uploads");
