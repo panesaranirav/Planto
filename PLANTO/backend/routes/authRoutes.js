@@ -33,6 +33,7 @@ router.post("/register", upload.single("profileImage"), async (req, res) => {
         email: newUser.email,
         firstname: newUser.firstname,
         lastname: newUser.lastname,
+        phoneNumber: newUser.phoneNumber,
         profileImage: newUser.profileImage ? `http://localhost:5173/uploads/${newUser.profileImage}` : null,
       },
     });
