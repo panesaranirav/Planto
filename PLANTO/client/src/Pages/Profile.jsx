@@ -79,7 +79,6 @@ const Profile = () => {
               ) : (
                 <>  
                 <p>{profileData[field]}</p>
-                <p>{profileData.phoneNumber || 'N/A'}</p>
                 </>
 
                 
