@@ -25,10 +25,11 @@ const Profile = () => {
       <div className="profile-card">
         <div className="profile-img-container">
           <img
-            src={profileData.profileImage}
-            alt="Profile"
-            className="profile-img"
-          />
+  src={profileData.profileImage || 'https://i.pravatar.cc/160?img=68'}
+  alt="Profile"
+  className="profile-img"
+/>
+
         </div>
 
         <div className="profile-info">
