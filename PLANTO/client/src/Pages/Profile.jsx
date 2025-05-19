@@ -6,7 +6,7 @@ const Profile = () => {
   const [profileData, setProfileData] = useState(null);
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({});
-  const email = "johndoe@gmail.com"; // Replace with dynamic email if using auth
+  const email = "nirav@gmail.com"; // Replace with dynamic email if using auth
 
   const API_BASE = import.meta.env.VITE_BACKEND_URL;
 
