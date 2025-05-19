@@ -9,6 +9,7 @@ import morgan from "morgan";
 
 dotenv.config();
 const app = express();
+
 const allowedOrigins = [
   'https://planto-git-main-panesara-niravs-projects.vercel.app',
   'https://planto-omega.vercel.app' // include if needed
@@ -23,8 +24,7 @@ app.use(cors({
     }
   },
   credentials: true
-})); 
-
+}));
 
 
 app.use(express.json());
