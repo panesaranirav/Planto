@@ -1,20 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Profile.css';
 
 const Profile = () => {
-  
-  const [profileData, setProfileData] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'johndoe@gmail.com',
-    phoneNumber: '123-456-7890',
-    password: '********',
-    profileImage: '/path/to/image.jpg',  // Path to the profile image
-  });
+  const [profileData, setProfileData] = useState(null);
+  const [editMode, setEditMode] = useState(false);
+  const [formData, setFormData] = useState({});
+  const email = "johndoe@gmail.com"; // Replace with dynamic email if using auth
 
+  const API_BASE = import.meta.env.VITE_BACKEND_URL;
+
+  // Fetch profile
   useEffect(() => {
-
+    axios
+      .get(`${API_BASE}/api/user-profile?email=${email}`)
+      .then((res) => {
+        setProfileData(res.data.user);
+        setFormData(res.data.user);
+      })
+      .catch((err) => console.error('Error fetching profile:', err));
   }, []);
+
+  const handleChange = (e) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleUpdate = async () => {
+    try {
+      const res = await axios.put(`${API_BASE}/api/update-profile`, {
+        email,
+        ...formData,
+      });
+      setProfileData(res.data.updatedUser);
+      setEditMode(false);
+    } catch (err) {
+      console.error('Update failed', err);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`${API_BASE}/api/delete-profile?email=${email}`);
+      alert('Profile deleted.');
+      // Optional: redirect or logout
+    } catch (err) {
+      console.error('Delete failed', err);
+    }
+  };
+
+  if (!profileData) return <p>Loading...</p>;
 
   return (
     <div className="profile-container">
@@ -25,40 +59,43 @@ const Profile = () => {
       <div className="profile-card">
         <div className="profile-img-container">
           <img
-  src={profileData.profileImage || 'https://i.pravatar.cc/160?img=68'}
-  alt="Profile"
-  className="profile-img"
-/>
-
+            src={profileData.profileImage || 'https://i.pravatar.cc/160?img=68'}
+            alt="Profile"
+            className="profile-img"
+          />
         </div>
 
         <div className="profile-info">
-          <div className="info-row">
-            <label>First Name:</label>
-            <p>{profileData.firstName}</p>
-          </div>
-          <div className="info-row">
-            <label>Last Name:</label>
-            <p>{profileData.lastName}</p>
-          </div>
-          <div className="info-row">
-            <label>Email:</label>
-            <p>{profileData.email}</p>
-          </div>
-          <div className="info-row">
-            <label>Phone Number:</label>
-            <p>{profileData.phoneNumber}</p>
-          </div>
-          <div className="info-row">
-            <label>Password:</label>
-            <p>{profileData.password}</p>
-          </div>
+          {['firstname', 'lastname', 'email', 'phoneNumber'].map((field) => (
+            <div className="info-row" key={field}>
+              <label>{field.charAt(0).toUpperCase() + field.slice(1)}:</label>
+              {editMode ? (
+                <input
+                  type="text"
+                  name={field}
+                  value={formData[field] || ''}
+                  onChange={handleChange}
+                />
+              ) : (
+                <p>{profileData[field]}</p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="action-btns">
-        <button className="edit-btn">Edit Profile</button>
-        <button className="logout-btn">Logout</button>
+        {editMode ? (
+          <>
+            <button className="save-btn" onClick={handleUpdate}>Save</button>
+            <button className="cancel-btn" onClick={() => setEditMode(false)}>Cancel</button>
+          </>
+        ) : (
+          <>
+            <button className="edit-btn" onClick={() => setEditMode(true)}>Edit Profile</button>
+            <button className="logout-btn" onClick={handleDelete}>Delete Profile</button>
+          </>
+        )}
       </div>
     </div>
   );
