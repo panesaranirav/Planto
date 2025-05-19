@@ -59,7 +59,7 @@ const Profile = () => {
       <div className="profile-card">
         <div className="profile-img-container">
           <img
-            src={profileData.profileImage || 'https://i.pravatar.cc/160?img=68'}
+            src={profileData.profileImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'}
             alt="Profile"
             className="profile-img"
           />
@@ -77,7 +77,8 @@ const Profile = () => {
                   onChange={handleChange}
                 />
               ) : (
-                <p>{profileData[field]}</p>
+                <p>{profileData[field]} || 'N/A'</p>
+                
               )}
             </div>
           ))}
