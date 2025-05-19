@@ -9,14 +9,14 @@
     background: radial-gradient(circle, rgba(1,135,17,1) 0%, rgba(21,56,1,1) 40%, rgba(3,50,8,1) 60%);
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 94vh;
     width: 100%;
 }
 
 .container {
     background: rgba(255, 255, 255, 0.041);
     margin: 0px 5%;
-    padding: 30px;
+    padding: 15px 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
