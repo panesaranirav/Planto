@@ -68,10 +68,12 @@ footer{
     border: 1px solid rgba(255, 255, 255, 0.212);
     outline: none;
     padding-left: 5px;
+    border-radius: 5px;
 }
 .button button{
     height:40px;
-    width: 100px;
+    width: 140px;
+    margin-left: 10px;
     background-color: rgba(240, 248, 255, 0.904);
     border: 1px solid rgba(255, 255, 255, 0.212);
     color: rgba(0, 0, 0, 0.801);
