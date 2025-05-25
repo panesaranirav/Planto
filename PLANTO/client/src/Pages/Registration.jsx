@@ -41,21 +41,17 @@ const Registration = () => {
       formData.append("password", userData.password);
       formData.append("profileImage", userData.profileImage); 
 
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, formData, {
+      const response = await axios.post(`${process.env.VITE_BACKEND_URL}/api/auth/register`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
       if (response.data.success) {
         toast.success("Registration successful!");
-
-        
         const user = response.data.user;
         localStorage.setItem("userEmail", user.email);
         if (user.profileImage) {
           localStorage.setItem("profileImage", user.profileImage);
         }
-
-        
         setTimeout(() => {
           navigate("/home");
           window.location.reload(); 
@@ -104,7 +100,7 @@ const Registration = () => {
         </form>
 
         
-        <ToastContainer position="top-right" autoClose={2000} />
+        <ToastContainer position="top-right" autoClose={1000} />
 
      
         <div className="bottom-buttons">
