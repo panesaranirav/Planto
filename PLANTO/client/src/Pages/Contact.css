@@ -66,12 +66,13 @@
   @media (max-width: 700px) {
   .context-img {
     position: relative;
+    height: 60vh;
   }
 
   .context-img img {
     position: absolute;
     left: 50%;
-    top: 0%;
+    top: 45%;
     transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
