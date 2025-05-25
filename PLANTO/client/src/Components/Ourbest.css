@@ -42,7 +42,6 @@
 }
 
 .slick-prev, .slick-next {
-    z-index: 0;
     display: none;
 }
 .slick-prev:before, .slick-next:before {
