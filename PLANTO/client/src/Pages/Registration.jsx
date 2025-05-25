@@ -4,30 +4,27 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Registration.css";
+
 const Registration = () => {
   const navigate = useNavigate();
-  
-  
+
   const [userData, setUserData] = useState({
     firstname: "",
     lastname: "",
     email: "",
     phone: "",
     password: "",
-    profileImage: null, 
+    profileImage: null,
   });
 
- 
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
-
 
   const handleFileChange = (e) => {
     setUserData({ ...userData, profileImage: e.target.files[0] });
   };
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -38,13 +35,14 @@ const Registration = () => {
       formData.append("email", userData.email);
       formData.append("phone", userData.phone);
       formData.append("password", userData.password);
-      formData.append("profileImage", userData.profileImage); 
+      formData.append("profileImage", userData.profileImage);
 
-console.log(import.meta.env.VITE_BACKEND_URL);
-
-        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const response = await axios.post( "https://planto-6.onrender.com/api/auth/register",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
       if (response.data.success) {
         toast.success("Registration successful!");
@@ -55,7 +53,7 @@ console.log(import.meta.env.VITE_BACKEND_URL);
         }
         setTimeout(() => {
           navigate("/home");
-          window.location.reload(); 
+          window.location.reload();
         }, 1000);
       } else {
         toast.error(response.data.message);
@@ -66,7 +64,6 @@ console.log(import.meta.env.VITE_BACKEND_URL);
     }
   };
 
-
   return (
     <section className="section-wrapper">
       <div className="container">
@@ -74,36 +71,71 @@ console.log(import.meta.env.VITE_BACKEND_URL);
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="firstname">First Name</label>
-            <input type="text" id="firstname" name="firstname"  required onChange={handleChange} />
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              required
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="lastname">Last Name</label>
-            <input type="text" id="lastname" name="lastname"  required onChange={handleChange} />
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              required
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required onChange={handleChange} />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone"required onChange={handleChange} />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password"  required onChange={handleChange} />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="profileImage">Profile Image</label>
-            <input type="file" name="profileImage" accept="image/*" onChange={handleFileChange} />
+            <input
+              type="file"
+              name="profileImage"
+              accept="image/*"
+              onChange={handleFileChange}
+            />
           </div>
 
-          <button type="submit" className="submit-btn">Register</button>
+          <button type="submit" className="submit-btn">
+            Register
+          </button>
         </form>
 
-        
         <ToastContainer position="top-right" autoClose={1000} />
 
-     
         <div className="bottom-buttons">
           <p>Already have an account?</p>
           <Link to="/">
