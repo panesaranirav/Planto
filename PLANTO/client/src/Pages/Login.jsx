@@ -41,7 +41,7 @@ const Login = () => {
   };
 
   return (
-    <section className="section-wrapper">
+    <section className="section-wrapper1">
       <div className="container-login">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
