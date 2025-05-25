@@ -71,19 +71,18 @@
   .context-img img {
     position: absolute;
     left: 50%;
-    top: 70%;
+    top: 0%;
     transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
-    z-index: 0; /* Send image behind */
-    opacity: 0.2; /* Optional: makes input more readable */
+    z-index: 0; 
+    opacity: 0.2;
   }
 
   .contact-container {
-    position: relative;
-    z-index: 1; /* Make sure form stays on top */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Optional: adds contrast */
+    top: 50px;
+    left: 50px;
+    z-index: 1; 
     border-radius: 10px;
     backdrop-filter: blur(4px);
   }
@@ -93,4 +92,7 @@
     background-color: rgba(255, 255, 255, 0.9);
     color: #000;
   }
+  form.contact-form {
+    text-align: center;
+}
 }
