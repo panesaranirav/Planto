@@ -54,7 +54,7 @@ const handlePlaceOrder = () => {
                   {"★".repeat(item.rating)}
                   {"☆".repeat(5 - item.rating)}
                 </div>
-                <div className="cart-item-price">${item.price.toFixed(2)}</div>
+                <div className="cart-item-price">Rs:{item.price.toFixed(2)}</div>
               </div>
               <div className="cart-qty-controls">
                 <button onClick={() => handleQtyChange(item.id, -1)}>-</button>
@@ -81,7 +81,7 @@ const handlePlaceOrder = () => {
 ) : (
   cartItems.length > 0 && (
     <div className="cart-total-section">
-      <h3>Total: ${getTotal()}</h3>
+      <h3>Total: Rs:{getTotal()}</h3>
       <button className="cart-place-order-btn" onClick={handlePlaceOrder}>
         Place Order
       </button>

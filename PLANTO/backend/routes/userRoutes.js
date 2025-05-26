@@ -18,7 +18,6 @@ router.use("/uploads", express.static(uploadPath));
 router.get("/user-profile", async (req, res) => {
   try {
     const email = req.query.email;
-    console.log(email);
     if (!email) return res.status(400).json({ error: "Email is required" });
 
     console.log("Email received in backend:", email);

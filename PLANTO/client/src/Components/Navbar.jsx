@@ -13,7 +13,7 @@ import { useCart } from "../Context/CartContext";
 
 const Navbar = () => {
   const [profileImage, setProfileImage] = useState("");
-  const userEmail = localStorage.getItem("userEmail");
+  const userEmail = (localStorage.getItem("profileImage") || "");
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartItems } = useCart();
 
