@@ -1,0 +1,129 @@
+/* icons.css */
+
+.small-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Additional layout styling (optional) */
+.product-section {
+  font-family: sans-serif;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.product-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.brand-name {
+  color: gray;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-title {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-text {
+  margin-left: 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+.social-icons a {
+  margin-left: 10px;
+  color: gray;
+}
+
+.description {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.selectors {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.colors {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.color-box.dark {
+  background-color: #333;
+}
+
+.color-box.blue {
+  background-color: #4f46e5;
+}
+
+.sizes select {
+  padding: 5px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.buy-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.wishlist-button {
+  background-color: #eee;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
