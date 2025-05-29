@@ -12,7 +12,6 @@ import Profile from "./Pages/Profile";
 import Cart from './Pages/Cart';
 import Topselling from './Components/Topselling';
 import PageNotFound from './Pages/PageNotFound';
-import ProductDetails from './Components/ProductDetails';
 
 function App() {
 return (
@@ -28,7 +27,6 @@ return (
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="/ProductDetails" element={<ProductDetails/>}/>
         <Route path="/*" element={<PageNotFound/>}/>
       </Routes>
       </CartProvider>
