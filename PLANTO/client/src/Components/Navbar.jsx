@@ -27,7 +27,9 @@ const Navbar = () => {
 
         if (response.data.user.profileImage) {
           setProfileImage(response.data.user.profileImage);
-          localStorage.setItem("profileImage", response.data.user.profileImage);
+          localStorage.setItem("userEmail", response.data.user.profileImage);
+
+
         }
       } catch (error) {
         console.error("Error fetching user profile", error);
