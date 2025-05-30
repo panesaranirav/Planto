@@ -146,7 +146,7 @@
 
 .confirm-order-btn {
   background-color: #28a745;
-  color: white;
+  color: rgb(7, 7, 7);
   border: none;
   padding: 12px 20px;
   font-size: 16px;
@@ -155,7 +155,7 @@
 }
 
 .confirm-order-btn:disabled {
-  background-color: gray;
+  background-color: rgba(14, 67, 1, 0.584);
   cursor: not-allowed;
 }
 
@@ -163,7 +163,7 @@
   text-align: center;
   padding: 40px 20px;
   border-radius: 10px;
-  background-color: #d4edda;
+  background-color: #014f1391;
   color: #155724;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
