@@ -77,7 +77,7 @@ const Profile = () => {
               'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
             }
             alt="Profile"
-            className="profile-img"
+            className="profile-img1"
           />
         </div>
 
