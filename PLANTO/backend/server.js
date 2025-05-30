@@ -27,7 +27,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use(morgan('dev'))
-
+app.use("/api/user", userRoutes);
 app.use("/api", userRoutes); 
 
 // 🔹 Serve static images
@@ -40,7 +40,6 @@ connectDB();
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api", userRoutes);
-app.use('/user', require('./routes/user'));
 
 // 🔹 Default Home Route
 app.get("/", (req, res) => {
