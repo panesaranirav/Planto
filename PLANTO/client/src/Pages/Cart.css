@@ -179,22 +179,83 @@
   cursor: not-allowed;
   opacity: 0.6;
 }
+/* === General Reset (Optional but good) === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e3f5df; /* light green background */
+  margin: 0;
+  padding: 0;
+  color: #1b3f1d; /* dark green text */
+}
+
+/* === Location Form === */
+.location-form {
+  margin: 30px auto;
+  padding: 24px;
+  max-width: 500px;
+  background-color: #c4eac2;
+  border: 2px solid #5b8c5a;
+  border-radius: 18px;
+  box-shadow: 0 6px 12px rgba(91, 140, 90, 0.2);
+  text-align: center;
+}
+
+.location-form h3 {
+  font-size: 22px;
+  color: #1e4c1f;
+  margin-bottom: 15px;
+}
+
+.location-textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #4b784a;
+  border-radius: 12px;
+  background-color: #e7f8e5;
+  color: #1b3f1d;
+  outline: none;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+/* === Confirm Order Button === */
+.confirm-order-btn {
+  background-color: #2e7d32;
+  color: #f0fff0;
+  border: none;
+  padding: 12px 26px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-order-btn:hover {
+  background-color: #1b5e20;
+}
+
+.confirm-order-btn:disabled {
+  background-color: #88b388;
+  cursor: not-allowed;
+}
 
 /* === Order Success Popup === */
 .order-success-popup {
-  text-align: center;
-  padding: 40px 30px;
-  margin-top: 40px;
-  background-color: #e6ffed;
-  color: #155724;
-  border: 2px solid #b7f5c6;
+  background-color: #bdf2b9;
+  border: 2px solid #3d803c;
+  padding: 40px 25px;
   border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 10px 16px rgba(61, 128, 60, 0.2);
 }
 
 .order-success-popup h2 {
   font-size: 28px;
   margin-bottom: 10px;
+  color: #1a3f1a;
 }
 
 .order-success-popup p {
@@ -203,10 +264,10 @@
 }
 
 .order-success-popup button {
-  background-color: #28a745;
-  color: white;
+  background-color: #2e7d32;
+  color: #f0fff0;
   border: none;
-  padding: 12px 24px;
+  padding: 12px 26px;
   font-size: 16px;
   border-radius: 30px;
   cursor: pointer;
@@ -214,9 +275,30 @@
 }
 
 .order-success-popup button:hover {
-  background-color: #218838;
+  background-color: #1b5e20;
 }
 
+/* === Cart Total Section Fix Alignment === */
+.cart-total-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cart-place-order-btn {
+  background-color: #2e7d32;
+  color: #f0fff0;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.cart-place-order-btn:hover {
+  background-color: #1b5e20;
+}
 
 
 @media (max-width: 768px) {
