@@ -20,14 +20,16 @@ const Navbar = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
+        const userEmail = localStorage.getItem("userEmail");
         if (!userEmail) return;
+        
         const response = await axios.get(`https://planto-4.onrender.com/user/user-profile`, {
           params: { email:userEmail},
         });
 
         if (response.data.user.profileImage) {
           setProfileImage(response.data.user.profileImage);
-          localStorage.setItem("userEmail", response.data.user.profileImage);
+          localStorage.setItem("profileImage", response.data.user.profileImage);
 
 
         }
