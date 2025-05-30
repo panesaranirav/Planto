@@ -8,9 +8,16 @@ const Profile = () => {
   const [formData, setFormData] = useState({});
 
   const API_BASE = import.meta.env.VITE_BACKEND_URL;
-  const email = localStorage.getItem('userEmail'); // ✅ Email fetched safely
+  const email = localStorage.getItem('userEmail');
 
-  // Fetch profile data
+ 
+  useEffect(() => {
+  if (profileData) {
+    setFormData(profileData);
+  }
+}, [profileData]);
+
+
   useEffect(() => {
     if (!email) return;
 
@@ -44,9 +51,9 @@ const Profile = () => {
     try {
       await axios.delete(`${API_BASE}/api/delete-profile?email=${email}`);
       alert('Profile deleted.');
-      // Optionally, clear storage and redirect
+      
       localStorage.removeItem('userEmail');
-      window.location.href = '/'; // or redirect to login
+      window.location.href = '/'; 
     } catch (err) {
       console.error('Delete failed', err);
     }
