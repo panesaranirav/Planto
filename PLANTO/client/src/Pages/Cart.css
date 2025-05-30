@@ -33,9 +33,9 @@
   box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
   padding: 30px;
   width: 100%;
-  margin: auto;
   max-width: 1200px;
-  margin-left: 22%;
+  margin: auto;
+  margin-left: 16%;;
 }
 
 .cart-item {
