@@ -22,7 +22,7 @@ const Navbar = () => {
       try {
         
         if (!userEmail) return;
-        const response = await axios.get(`https://planto-4.onrender.com/api/user-profile`, {
+        const response = await axios.get(`https://planto-4.onrender.com/api/user-profile${userEmail}`, {
           params: { email:userEmail},
         });
 
@@ -80,7 +80,6 @@ const Navbar = () => {
             <Link to="/profile">
               <img
                 src={profileImage || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
-                alt="Profile"
                 className="profile-img"
               />
             </Link>
