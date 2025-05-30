@@ -35,7 +35,7 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  margin-left: 16%;;
+  margin-left: 14%;;
 }
 
 .cart-item {
@@ -130,6 +130,44 @@
 .cart-place-order-btn:hover {
   background-color: #00e676;
 }
+.location-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.location-textarea {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  resize: none;
+  font-size: 16px;
+}
+
+.confirm-order-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.confirm-order-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.order-success-popup {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
 
 @media (max-width: 768px) {
   .cart-app-container {
