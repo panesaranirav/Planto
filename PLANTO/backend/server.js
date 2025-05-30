@@ -9,7 +9,6 @@ import morgan from "morgan";
 
 dotenv.config();
 const app = express();
-
 const allowedOrigins = [
   'https://planto-git-main-panesara-niravs-projects.vercel.app',
 ];
@@ -41,6 +40,7 @@ connectDB();
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api", userRoutes);
+app.use('/user', require('./routes/user'));
 
 // 🔹 Default Home Route
 app.get("/", (req, res) => {

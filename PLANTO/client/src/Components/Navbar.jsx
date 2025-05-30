@@ -21,7 +21,7 @@ const Navbar = () => {
     const fetchUserProfile = async () => {
       try {
         if (!userEmail) return;
-        const response = await axios.get(`https://planto-4.onrender.com/user-profile`, {
+        const response = await axios.get(`https://planto-4.onrender.com/user/user-profile`, {
           params: { email:userEmail},
         });
 
