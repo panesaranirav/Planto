@@ -13,7 +13,7 @@ import { useCart } from "../Context/CartContext";
 
 const Navbar = () => {
   const [profileImage, setProfileImage] = useState("");
-  const userEmail = (localStorage.getItem("profileImage") || "");
+  const userEmail = localStorage.getItem("userEmail");
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartItems } = useCart();
 
@@ -27,11 +27,9 @@ const Navbar = () => {
         });
 
         if (response.data.user.profileImage) {
-          setProfileImage(response.data.user.profileImage);
-          localStorage.setItem("profileImage", response.data.user.profileImage);
+  setProfileImage(response.data.user.profileImage);
+}
 
-
-        }
       } catch (error) {
         console.error("Error fetching user profile", error);
       }
