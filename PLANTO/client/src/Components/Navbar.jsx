@@ -22,14 +22,15 @@ const Navbar = () => {
       try {
         
         if (!userEmail) return;
-        const response = await axios.get(`https://planto-4.onrender.com/api/user-profile${userEmail}`, {
+        const response = await axios.get(`https://planto-4.onrender.com/api/user-profile$`, {
           params: { email:userEmail},
         });
 
         if (response.data.user.profileImage) {
   setProfileImage(response.data.user.profileImage);
-}
 
+}
+console.log(response.data.user.profileImage);
       } catch (error) {
         console.error("Error fetching user profile", error);
       }
