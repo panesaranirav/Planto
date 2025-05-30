@@ -28,7 +28,7 @@ router.get("/user-profile", async (req, res) => {
 
     console.log("User found:", user); 
     
-    // Handle profile image path
+    
     const baseUrl = req.protocol + '://' + req.get('host');
 const profileImageUrl = user.profileImage
   ? `${baseUrl}/uploads/${user.profileImage}`

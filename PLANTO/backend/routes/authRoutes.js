@@ -34,7 +34,7 @@ router.post("/register", upload.single("profileImage"), async (req, res) => {
         firstname: newUser.firstname,
         lastname: newUser.lastname,
         phoneNumber: newUser.phoneNumber,
-        profileImage: newUser.profileImage ? `http://localhost:5173/uploads/${newUser.profileImage}` : null,
+        profileImage: newUser.profileImage ? `https://planto-6.onrender.com/uploads/${newUser.profileImage}` : null,
       },
     });
   } catch (err) {
@@ -65,7 +65,7 @@ router.post("/login", async (req, res) => {
         email: user.email,
         firstname: user.firstname,
         lastname: user.lastname,
-        profileImage: user.profileImage ? `http://localhost:5173/uploads/${user.profileImage}` : null,
+        profileImage: user.profileImage ? `https://planto-6.onrender.com/uploads/${user.profileImage}` : null,
       },
     });
   } catch (err) {
