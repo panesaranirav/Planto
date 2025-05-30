@@ -6,12 +6,14 @@ const Profile = () => {
   const [profileData, setProfileData] = useState(null);
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({});
-  const email = "nirav@gmail.com"; // Replace with dynamic email if using auth
 
   const API_BASE = import.meta.env.VITE_BACKEND_URL;
+  const email = localStorage.getItem('userEmail'); // ✅ Email fetched safely
 
-  // Fetch profile
+  // Fetch profile data
   useEffect(() => {
+    if (!email) return;
+
     axios
       .get(`${API_BASE}/api/user-profile?email=${email}`)
       .then((res) => {
@@ -19,10 +21,10 @@ const Profile = () => {
         setFormData(res.data.user);
       })
       .catch((err) => console.error('Error fetching profile:', err));
-  }, []);
+  }, [email]);
 
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleUpdate = async () => {
@@ -42,7 +44,9 @@ const Profile = () => {
     try {
       await axios.delete(`${API_BASE}/api/delete-profile?email=${email}`);
       alert('Profile deleted.');
-      // Optional: redirect or logout
+      // Optionally, clear storage and redirect
+      localStorage.removeItem('userEmail');
+      window.location.href = '/'; // or redirect to login
     } catch (err) {
       console.error('Delete failed', err);
     }
@@ -59,7 +63,10 @@ const Profile = () => {
       <div className="profile-card">
         <div className="profile-img-container">
           <img
-            src={profileData.profileImage || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'}
+            src={
+              profileData.profileImage ||
+              'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
+            }
             alt="Profile"
             className="profile-img"
           />
@@ -77,11 +84,7 @@ const Profile = () => {
                   onChange={handleChange}
                 />
               ) : (
-                <>  
                 <p>{profileData[field]}</p>
-                </>
-
-                
               )}
             </div>
           ))}
@@ -91,13 +94,21 @@ const Profile = () => {
       <div className="action-btns">
         {editMode ? (
           <>
-            <button className="save-btn" onClick={handleUpdate}>Save</button>
-            <button className="cancel-btn" onClick={() => setEditMode(false)}>Cancel</button>
+            <button className="save-btn" onClick={handleUpdate}>
+              Save
+            </button>
+            <button className="cancel-btn" onClick={() => setEditMode(false)}>
+              Cancel
+            </button>
           </>
         ) : (
           <>
-            <button className="edit-btn" onClick={() => setEditMode(true)}>Edit Profile</button>
-            <button className="logout-btn" onClick={handleDelete}>Delete Profile</button>
+            <button className="edit-btn" onClick={() => setEditMode(true)}>
+              Edit Profile
+            </button>
+            <button className="logout-btn" onClick={handleDelete}>
+              Delete Profile
+            </button>
           </>
         )}
       </div>
