@@ -11,12 +11,7 @@ const Profile = () => {
   const email = localStorage.getItem('userEmail');
 
  
-  useEffect(() => {
-  if (profileData) {
-    setFormData(profileData);
-  }
-}, [profileData]);
-
+ 
 
   useEffect(() => {
     if (!email) return;
@@ -29,6 +24,13 @@ const Profile = () => {
       })
       .catch((err) => console.error('Error fetching profile:', err));
   }, [email]);
+
+   useEffect(() => {
+  if (profileData) {
+    setFormData(profileData);
+  }
+}, [profileData]);
+
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
