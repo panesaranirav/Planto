@@ -16,7 +16,7 @@ const Navbar = () => {
   const userEmail = localStorage.getItem("userEmail");
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartItems } = useCart();
-
+const BASE_URL = "https://planto-4.onrender.com";
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
@@ -27,10 +27,11 @@ const Navbar = () => {
         });
 
         if (response.data.user.profileImage) {
-  setProfileImage(response.data.user.profileImage);
+ const fullImageUrl = `${BASE_URL}/${response.data.user.profileImage}`;
+  setProfileImage(fullImageUrl);
 
 }
-console.log(response.data.user.profileImage);
+
       } catch (error) {
         console.error("Error fetching user profile", error);
       }
