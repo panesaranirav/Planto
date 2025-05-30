@@ -86,6 +86,7 @@ body {
 }
 
 .info-row input {
+  color: black;
   font-size: 1rem;
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
@@ -168,6 +169,7 @@ button {
   }
   .info-row p,
   .info-row input {
+    color:black;
     max-width: 100%;
     text-align: left;
     margin-top: 0.25rem;
