@@ -16,22 +16,22 @@ const Navbar = () => {
   const userEmail = localStorage.getItem("userEmail");
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartItems } = useCart();
-const BASE_URL = "https://planto-4.onrender.com";
+  const BASE_URL = "https://planto-4.onrender.com";
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        
         if (!userEmail) return;
-        const response = await axios.get(`https://planto-4.onrender.com/api/user-profile$`, {
-          params: { email:userEmail},
-        });
+        const response = await axios.get(
+          `https://planto-4.onrender.com/api/user-profile$`,
+          {
+            params: { email: userEmail },
+          }
+        );
 
         if (response.data.user.profileImage) {
- const fullImageUrl = `${BASE_URL}/${response.data.user.profileImage}`;
-  setProfileImage(fullImageUrl);
-
-}
-
+          const fullImageUrl = `${BASE_URL}/${response.data.user.profileImage}`;
+          setProfileImage(fullImageUrl);
+        }
       } catch (error) {
         console.error("Error fetching user profile", error);
       }
@@ -81,7 +81,10 @@ const BASE_URL = "https://planto-4.onrender.com";
           <div className="user">
             <Link to="/profile">
               <img
-                src={profileImage || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
+                src={
+                  profileImage ||
+                  "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                }
                 className="profile-img"
               />
             </Link>

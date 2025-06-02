@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f7fa;
+  /* background-color: #f4f7fa; */
   margin: 0;
   padding: 0;
 }
@@ -14,7 +14,7 @@ body {
 .profile-container {
   max-width: 480px;
   margin: 3rem auto;
-  background: #fff;
+  background: #01510377;
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
