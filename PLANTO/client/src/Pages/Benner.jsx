@@ -17,7 +17,7 @@ const Benner = () => {
             <div className="people-card">
                 <div className="card">
                     <div className="people-img">
-                    <img src={assets.people} />
+                    <img src={assets.nirav} />
                     </div>
                     <div className="people-name">
                     <h2>Nirav Patel</h2>
