@@ -49,6 +49,9 @@
 }
 .people-img{
     align-items: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
 }
 .people-name{
     line-height: 2.3;
