@@ -51,8 +51,8 @@
     align-items: center;
 }
 .people-img img{
-    height: 120px;
-    width: 120px;
+    height: 70px;
+    width:70px;
     border-radius: 50%;
 }
 .people-name{
