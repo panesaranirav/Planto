@@ -9,6 +9,7 @@ import  {useCart}  from "../Context/CartContext";
 import { toast, ToastContainer } from "react-toastify"; 
 import 'react-toastify/dist/ReactToastify.css';
 import Copyright from "../Components/Copyright"
+import Loader from "../Components/Loader";
 const Plants = () => {
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,7 +29,7 @@ const Plants = () => {
       });
   }, []);
 
-  if (loading) return <p>Loading Plants...</p>
+  if (loading) return <div><Loader/></div>
    
     const handleAddToCart = (item) => {
       addToCart(item);
