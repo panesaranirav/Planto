@@ -36,7 +36,7 @@ const Plants = () => {
     addToCart(item);
     toast.success(`${item.name} added to cart!`, {
       position: "top-right", 
-      autoClose: 2000,
+      autoClose: 1000,
     });
   };
 
@@ -81,7 +81,6 @@ const Plants = () => {
       </div>
       <Footer />
       <Copyright />
-      <ToastContainer />
     </div>
   );
 };
