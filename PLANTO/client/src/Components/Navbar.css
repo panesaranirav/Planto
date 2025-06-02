@@ -104,12 +104,8 @@
     border: 2px solid #ffffff0a; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
     cursor: pointer; 
-    transition: transform 0.3s ease;
     margin-top: 22px;
-  }
-  
-  .profile-img:hover {
-    transform: scale(1.1); 
+    pointer-events: none;
   }
   .menu-btn{
     display: none;
