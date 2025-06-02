@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Profile.css';
+import Loader from '../Components/Loader';
 
 const Profile = () => {
   const [profileData, setProfileData] = useState(null);
@@ -61,7 +62,9 @@ const Profile = () => {
     }
   };
 
-  if (!profileData) return <p>Loading...</p>;
+  if (!profileData) return <div>
+    <Loader/>
+  </div>;
 
   return (
     <div className="profile-container">

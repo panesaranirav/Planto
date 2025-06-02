@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Plants from "../Pages/Plants";
 import { useState,useEffect } from "react";
+import Loader from "../Components/Loader"
 
 const Topselling = () => {
   const { addToCart } = useCart();  
@@ -43,7 +44,7 @@ const Topselling = () => {
   }, []);
     
   if(loading){
-    return <p>wait..........</p>
+    return <Loader/>
   }
   return (
     <div className="topselling-sec">
