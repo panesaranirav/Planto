@@ -1,119 +1,113 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.all-component {
-  height: auto;
-}
-
+/* Container section */
 .all-plants {
   background-color: #1A2217;
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
   padding: 40px 20px;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.all-plants h1 {
+.all-plants .heading h1 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-weight: bold;
 }
 
+/* Card layout */
 .all-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
-  padding: 0 10%;
+  padding-bottom: 5%;
 }
 
-/* Card container */
-.border {
-  width: 32%;
-  height: 350px;
-  background-color: #ffffff0a;
+/* Individual card styling */
+.plant-card {
+  background-color: rgba(240, 248, 255, 0.034);
+  border: 1px solid rgba(255, 255, 255, 0.068);
   border-radius: 20px;
-  padding: 24px;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 30px;
+  width: 25%;
+  height: 350px;
+  line-height: 1.7;
+  padding: 20px;
+  margin-top: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.border img {
-  width: 150px;
-  height: 150px;
+.plant-card:hover {
+  transform: scale(1.02);
+}
+
+.plant-image {
+  height: 180px;
+  width: 160px;
   object-fit: contain;
-  margin: 0 auto 10px;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
-/* Text inside card */
-.text-xl {
-  font-size: 1.25rem;
+.plant-name {
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-.text-sm {
+.plant-desc {
   font-size: 0.9rem;
-  color: #d0d0d0;
+  color: #ccc;
   margin-bottom: 10px;
+  padding: 0 5%;
 }
 
-/* Price and cart section */
-.mt-2 {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #f4f5f4;
-  display: flex;
+.price-cart {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f4f5f4;
+  gap: 10px;
 }
 
-.mt-2 .cart-icon {
+.cart-icon {
   cursor: pointer;
   transition: transform 0.2s;
 }
 
-.mt-2 .cart-icon:hover {
+.cart-icon:hover {
   transform: scale(1.2);
 }
 
-/* Responsive: Tablet */
-@media (max-width: 992px) {
-  .border {
-    width: 48%;
-  }
-}
-
-/* Responsive: Mobile */
-@media (max-width: 600px) {
-  .border {
-    width: 100%;
+/* Tablet view */
+@media (max-width: 1151px) {
+  .plant-card {
+    width: 30%;
     height: auto;
   }
 
-  .all-cards {
-    padding: 0;
-    justify-content: center;
-  }
-
-  .border img {
-    width: 130px;
-    height: 130px;
+  .plant-image {
+    height: 150px;
+    width: 140px;
   }
 }
 
-/* Extra small screens */
-@media (max-width: 340px) {
-  .border img {
-    padding-right: 9%;
+/* Mobile view */
+@media (max-width: 768px) {
+  .all-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plant-card {
+    width: 80%;
+  }
+
+  .plant-image {
+    height: 130px;
+    width: 120px;
   }
 }
