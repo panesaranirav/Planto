@@ -27,9 +27,9 @@
     flex-wrap: wrap;
     text-align: center;
     margin: auto;
-    border: 1px solid white;
+    border: 1px solid rgba(245, 245, 245, 0.252);
     border-radius: 12px;
-    background: white;
+    background: rgba(255, 255, 255, 0.044);
 }
   
   .all-plants h1 {
