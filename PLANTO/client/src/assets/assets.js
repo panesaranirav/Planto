@@ -1,5 +1,5 @@
 import logo from "./logo.png";
-import people from "./people.png";
+import nirav from "./nirav.jpg";
 import calathea from "./calathea.png";
 import trand1 from "./trand1.png";
 import trand2 from "./trand2.png";
@@ -19,7 +19,7 @@ import about1 from './about1.png'
 
 const assets = {
   logo,
-  people,
+  nirav,
   calathea,
   trand1,
   trand2,
