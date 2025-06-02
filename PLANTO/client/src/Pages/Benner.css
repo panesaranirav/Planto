@@ -46,13 +46,14 @@
 .card{
     display: flex;
     margin-bottom: 5%;
+    align-items: center;
 }
 .people-img{
     align-items: center;
 }
 .people-img img{
-    height: 70px;
-    width:70px;
+    height: 60px;
+    width:60px;
     border-radius: 50%;
 }
 .people-name{
