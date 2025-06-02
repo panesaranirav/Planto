@@ -20,7 +20,7 @@ const Benner = () => {
                     <img src={assets.people} />
                     </div>
                     <div className="people-name">
-                    <h2>alena Patel</h2>
+                    <h2>Nirav Patel</h2>
                     </div>
                 </div>
                 <p>
