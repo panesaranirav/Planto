@@ -21,16 +21,12 @@
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  .all-cards {
-    padding: 0% 0%;
+  .all-cards{
+    padding: 0% 10%;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-    margin: auto;
-    border: 1px solid rgba(245, 245, 245, 0.252);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.044);
-}
+    justify-content: space-between;
+  }
   
   .all-plants h1 {
     text-align: center;
