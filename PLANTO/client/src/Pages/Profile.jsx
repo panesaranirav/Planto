@@ -121,6 +121,9 @@ const Profile = () => {
             <button className="logout-btn" onClick={handleDelete}>
               Delete Profile
             </button>
+            <button className="logout-btn" onClick={handleDelete}>
+              Back To Home
+            </button>
           </>
         )}
       </div>

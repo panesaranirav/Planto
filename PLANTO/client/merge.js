@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 
 const data = JSON.parse(readFileSync('db.json', 'utf-8'));
-const popular = { /* your popular data here */ };
+const popular = {};
 
 const merged = { ...data, ...popular };
 
