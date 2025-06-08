@@ -17,8 +17,64 @@ const Registration = () => {
     profileImage: null,
   });
 
+  const [errors, setErrors] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\+?[\d\s-]{10,}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  const validateField = (name, value) => {
+    let error = "";
+    switch (name) {
+      case "firstname":
+      case "lastname":
+        if (value.length < 2) {
+          error = `${name} must be at least 2 characters long`;
+        }
+        break;
+      case "email":
+        if (!validateEmail(value)) {
+          error = "Please enter a valid email address";
+        }
+        break;
+      case "phone":
+        if (!validatePhone(value)) {
+          error = "Please enter a valid phone number";
+        }
+        break;
+      case "password":
+        if (!validatePassword(value)) {
+          error = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number";
+        }
+        break;
+      default:
+        break;
+    }
+    return error;
+  };
+
   const handleChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
+    const error = validateField(name, value);
+    setErrors({ ...errors, [name]: error });
   };
 
   const handleFileChange = (e) => {
@@ -27,6 +83,21 @@ const Registration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate all fields before submission
+    const newErrors = {};
+    Object.keys(userData).forEach(key => {
+      if (key !== 'profileImage') {
+        const error = validateField(key, userData[key]);
+        if (error) newErrors[key] = error;
+      }
+    });
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      toast.error("Please fix the validation errors before submitting");
+      return;
+    }
 
     try {
       const formData = new FormData();
@@ -37,7 +108,8 @@ const Registration = () => {
       formData.append("password", userData.password);
       formData.append("profileImage", userData.profileImage);
 
-      const response = await axios.post( "https://planto-6.onrender.com/api/auth/register",
+      const response = await axios.post(
+        "https://planto-6.onrender.com/api/auth/register",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -77,7 +149,9 @@ const Registration = () => {
               name="firstname"
               required
               onChange={handleChange}
+              value={userData.firstname}
             />
+            {errors.firstname && <span className="error-message">{errors.firstname}</span>}
           </div>
           <div className="form-group">
             <label htmlFor="lastname">Last Name</label>
@@ -87,7 +161,9 @@ const Registration = () => {
               name="lastname"
               required
               onChange={handleChange}
+              value={userData.lastname}
             />
+            {errors.lastname && <span className="error-message">{errors.lastname}</span>}
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -97,7 +173,9 @@ const Registration = () => {
               name="email"
               required
               onChange={handleChange}
+              value={userData.email}
             />
+            {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
@@ -107,7 +185,9 @@ const Registration = () => {
               name="phone"
               required
               onChange={handleChange}
+              value={userData.phone}
             />
+            {errors.phone && <span className="error-message">{errors.phone}</span>}
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
@@ -117,7 +197,9 @@ const Registration = () => {
               name="password"
               required
               onChange={handleChange}
+              value={userData.password}
             />
+            {errors.password && <span className="error-message">{errors.password}</span>}
           </div>
           <div className="form-group">
             <label htmlFor="profileImage">Profile Image</label>
