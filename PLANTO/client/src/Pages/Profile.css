@@ -155,11 +155,15 @@ button {
 .logout-btn:hover {
   background-color: #c0392b;
 }
-/* img.profile-img1 {
-    object-fit: cover;
-    height: 121px;
-    width: 115px;
-} */
+
+.back-btn {
+  background-color: #72e73cd8;
+  color: white;
+}
+
+.back-btn:hover {
+  background-color: #49c02bc9;
+}
 
 @media (max-width: 520px) {
   .profile-card {
