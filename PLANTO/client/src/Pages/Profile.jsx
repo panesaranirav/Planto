@@ -62,6 +62,10 @@ const Profile = () => {
     }
   };
 
+  const handleBack = async () => {
+    window.location.href = '/home';
+  };
+
   if (!profileData) return <div>
     <Loader/>
   </div>;
@@ -121,7 +125,7 @@ const Profile = () => {
             <button className="logout-btn" onClick={handleDelete}>
               Delete Profile
             </button>
-            <button className="back-btn" onClick={handleDelete}>
+            <button className="back-btn" onClick={handleBack}>
               Back To Home
             </button>
           </>
