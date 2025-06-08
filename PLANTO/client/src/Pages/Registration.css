@@ -125,3 +125,28 @@
 .form-group input:focus.error {
   box-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
 }
+
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2rem;
+  color: rgb(209, 208, 208);
+  transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+  color: #0f5e05;
+}
+
+.password-input-container input {
+  padding-right: 40px;
+}

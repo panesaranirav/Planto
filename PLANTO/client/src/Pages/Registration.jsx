@@ -17,6 +17,8 @@ const Registration = () => {
     profileImage: null,
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const [errors, setErrors] = useState({
     firstname: "",
     lastname: "",
@@ -79,6 +81,10 @@ const Registration = () => {
 
   const handleFileChange = (e) => {
     setUserData({ ...userData, profileImage: e.target.files[0] });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   const handleSubmit = async (e) => {
@@ -191,14 +197,22 @@ const Registration = () => {
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              required
-              onChange={handleChange}
-              value={userData.password}
-            />
+            <div className="password-input-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                required
+                onChange={handleChange}
+                value={userData.password}
+              />
+              <span 
+                className="password-toggle"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? "👁️" : "👁️‍🗨️"}
+              </span>
+            </div>
             {errors.password && <span className="error-message">{errors.password}</span>}
           </div>
           <div className="form-group">
