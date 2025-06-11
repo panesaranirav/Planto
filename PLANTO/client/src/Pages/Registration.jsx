@@ -38,7 +38,7 @@ const Registration = () => {
   };
 
   const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*\d)[a-zA-Z\d]{8,}$/;
+    const passwordRegex = /^(?=.*\d)[a-zA-Z\d@]{8,}$/;
     return passwordRegex.test(password);
   };
 
